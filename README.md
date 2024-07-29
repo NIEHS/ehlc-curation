@@ -17,7 +17,7 @@ For example:
 ```sh
 git clone https://github.com/jamesaoverton/ehlc-curation-prototype.git
 cd ehlc-curation-prototype
-curl -L -o nanobot https://github.com/ontodev/nanobot.rs/releases/download/v2024-04-25/nanobot-v20240425-x86_64-linux
+curl -L -o nanobot https://github.com/ontodev/nanobot.rs/releases/download/v2024-07-29/nanobot-v20240729-x86_64-linux
 chmod +x nanobot
 ./nanobot serve --connection :memory:
 ```

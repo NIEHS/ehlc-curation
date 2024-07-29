@@ -4,8 +4,10 @@ empty	text	equals('')	the empty string	NULL
 line	text	exclude(/\\\\\\\n/)	one line of text		text
 list	line	match(/(\S|\S.*\S)/)	a list of terms		
 label	line	match(/(\S|\S.*\S)/)	text that does not begin or end with whitespace		
+labels	line	list(label, '; ')	a comma-separated list of labels		multisearch
 URL	label	match(/\S+/)	a Uniform Resource Locator		
 word	label	match(/\w+/)	a single word: letters, numbers, underscore		
+words	label	list(word, ', ')	a comma-separated list of words		multisearch
 email	label	match(/\S+@\S+/)	an email address		
 GUID	word	match(/\w+/)	a single word: letters, numbers, underscore		
 natural_number	label	match(/\d+/)	an integer greater than zero	INTEGER	
@@ -14,4 +16,4 @@ program	word	in('CHORDS')	a program name		search
 yes_no	word	in('yes', 'no')	Yes or No		search
 table_type	word	in('table', 'column', 'datatype')	a VALVE table type		search
 sql_type	word	in('NULL', 'TEXT', 'INTEGER')	a SQL type		search
-html_type	word	in('text', 'textarea', 'search', 'radio', 'number', 'select')	an HTML form type		search
+html_type	word	in('text', 'textarea', 'search', 'multisearch', 'radio', 'number', 'select')	an HTML form type		search

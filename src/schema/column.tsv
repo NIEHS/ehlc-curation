@@ -30,8 +30,8 @@ geospatial	program_name			program		CHORDS
 geospatial	project_GUID		empty	GUID		project ID, fill in only if reusing or updating an existing project, otherwise leave blank
 geospatial	project_name			label		name of project
 geospatial	project_short_name		empty	label		project name abbreviation or short name
-geospatial	project_sponsor			list	from(sponsor.label)	the name of an agency, institution, consortium, or other body that oversees the projects and resources.  For academic programs that center around a lab or individual use the department or consortium name.
-geospatial	project_sponsor_other		empty	list		if does not appear in the CV above
+geospatial	project_sponsor			words	from(sponsor.label)	the name of an agency, institution, consortium, or other body that oversees the projects and resources.  For academic programs that center around a lab or individual use the department or consortium name.
+geospatial	project_sponsor_other		empty	line		if does not appear in the CV above
 geospatial	project_sponsor_type			label	from(sponsor_type.label)	type of program
 geospatial	project_url			URL		project website
 geospatial	project_description			label		description of project
@@ -41,8 +41,8 @@ geospatial	resource_short_name			label		resource name abbreviation or short name
 geospatial	resource_type			label	from(resource_type.label)	type of resource
 geospatial	resource_url			URL		resource website
 geospatial	resource_description			label		description of resource
-geospatial	domain			list	from(domain.label)	subject domain of the resource, broad categories
-geospatial	keywords		empty	list		keywords to describe resource, preferably from MESH
+geospatial	domain			labels	from(domain.label)	subject domain of the resource, broad categories
+geospatial	keywords		empty	line		keywords to describe resource, preferably from MESH
 geospatial	access_type			word	from(access_type.label)	type of resource access (more than one term?)
 geospatial	payment_required			yes_no		indicate whether resource is free or fee based
 geospatial	date_added		empty	datetime		date resource added to catalog
