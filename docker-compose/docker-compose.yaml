@@ -1,0 +1,35 @@
+version: '3'
+services:
+  database:
+    container_name: nanobot-database
+    image: postgres:16.4
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: nanobot
+      POSTGRES_USER: nanobot
+      POSTGRES_DB: nanobot
+      POSTGRES_HOST_AUTH_METHOD: md5
+    ports:
+      - "5432:5432"
+    networks:
+      - nanobot
+  nanobot:
+    image: "nanobot" #
+    container_name: nanobot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ${NANOBOT_DIR}:/ehlc-curation
+    #  - /Users/conwaymc/Documents/workspace-niehs-rel/metalnx-niehs-plugins:/opt/irods-ext:ro
+    ports:
+      - "3000:3000"
+    networks:
+      - nanobot
+
+volumes:
+  database-data: # named volumes can be managed easier using docker-compose
+
+networks:
+  nanobot:
+    external: false
